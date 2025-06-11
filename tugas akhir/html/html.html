@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galeri PTE 22 dengan Form Wajib</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/css.css">
+</head>
+<body>
+
+  <!-- Form Pendaftaran -->
+  <section id="registerFormSection">
+    <div id="registerFormContainer">
+      <h2>Yuk, Kenalan Dulu! Baru Bisa Masuk Galeri</h2>
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Nama Lengkap" required />
+        <input type="email" id="regEmail" placeholder="Email" required />
+        <button type="submit">Daftar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Navbar Toggle -->
+  <button class="navbar-toggle" id="navbarToggle" onclick="toggleNavbar()">☰ Menu</button>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="main-navbar">
+    <a href="#" onclick="showSection('home', this)" class="active">Home</a>
+    <a href="#" onclick="showSection('about', this)">About</a>
+    <a href="#" onclick="showSection('gallery', this)">Galeri</a>
+    <a href="#" onclick="showSection('contact', this)">Kontak</a>
+    <a href="#" id="logoutBtn" style="color:#f87171; margin-top: 1rem; font-weight: 700;">Logout</a>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <h1>Galeri PTE 22</h1>
+    </div>
+  </header>
+
+  <audio id="bgMusic" loop>
+    <source src="../asset/lagu website.mp3" type="audio/mpeg" />
+    Browser tidak mendukung audio.
+  </audio>
+
+  <!-- Main Content -->
+  <main>
+    <section id="home" class="section active">
+      <div class="welcome">
+        <h2>Selamat Datang!</h2>
+        <p>Website ini dibuat sebagai bentuk pengerjaan tugas akhir mata kuliah Desain Web. Selain memenuhi tugas akademik, website ini juga diharapkan menjadi tempat yang menyenangkan untuk mengenang momen selama perkuliahan dan mempererat persahabatan antar anggota kelas.</p>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="about-container">
+        <div class="about-text">
+          <h3>Tentang Galeri PTE 22</h3>
+          <p style="text-align: justify;">
+            Website Galeri PTE 22 dibuat sebagai wadah dokumentasi perjalanan kami di Pendidikan Teknik Elektronika. Namun, lebih dari itu, website ini juga bertujuan untuk membangun interaksi dengan para pengguna—baik mahasiswa, alumni, maupun pengunjung lainnya. Melalui fitur kontak yang tersedia, pengguna dapat mengirimkan foto-foto kenangan atau dokumentasi kegiatan yang ingin ditampilkan dalam galeri ini. Kami percaya bahwa setiap momen berharga layak untuk dibagikan dan dikenang bersama.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="../asset/fotokelompok.jpg" alt="Foto Kelompok 2" />
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="info">
+        <h2 style="text-align: center; color: #1e3a8a; margin-bottom: 2rem;">Kumpulan Foto Kenangan Dari Masa Ke Masa PTE 22</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <h4>Semester 1</h4>
+            <img src="../asset/Semester1.1.jpg" alt="Semester 1" />
+            <button class="view-button" onclick="showGallery(event, ['../asset/Semester1.1.jpg', '../asset/Semester1.2.jpg', '../asset/Semester1.3.jpg', '../asset/Semester1.4.jpg', '../asset/Semester1.5.jpg', '../asset/Semester1.6.jpg', '../asset/Semester1.7.jpg'])">View</button>
+          </div>
+          <div class="gallery-item">
+            <h4>Semester 2</h4>
+            <img src="../asset/Semester2.1.jpg" alt="Semester 2" />
+            <button class="view-button" onclick="showGallery(event, ['../asset/Semester2.1.jpg', '../asset/Semester2.2.jpg'])">View</button>
+          </div>
+          <div class="gallery-item">
+            <h4>Semester 3</h4>
+            <img src="../asset/Semester3.1.jpg" alt="Semester 3" />
+            <button class="view-button" onclick="showGallery(event, ['../asset/Semester3.1.jpg', '../asset/Semester3.2.jpg', '../asset/Semester3.3.jpg', '../asset/Semester3.4.jpg', '../asset/Semester3.5.jpg'])">View</button>
+          </div>
+          <div class="gallery-item">
+            <h4>Semester 4</h4>
+            <img src="../asset/Semester4.1.jpg" alt="Semester 4" />
+            <button class="view-button" onclick="showGallery(event, ['../asset/Semester4.1.jpg', '../asset/Semester4.2.jpg'])">View</button>
+          </div>
+          <div class="gallery-item">
+            <h4>Semester 5</h4>
+            <img src="../asset/Semester5.1.jpg" alt="Semester 5" />
+            <button class="view-button" onclick="showGallery(event, ['../asset/Semester5.1.jpg', '../asset/Semester5.2.jpg', '../asset/Semester5.3.jpg'])">View</button>
+          </div>
+          <div class="gallery-item">
+            <h4>Semester 6</h4>
+            <img src="../asset/Semester6.1.jpg" alt="Semester 6" />
+            <button class="view-button" onclick="showGallery(event, ['../asset/Semester6.1.jpg', '../asset/Semester6.2.jpg', '../asset/Semester6.1.jpg'])">View</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="info" style="text-align: center;">
+        <h1 style="color: #1e3a8a; margin-bottom: 1rem;">Kontak Yang Bisa Dihubungi : </h1>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem;">
+          <a href="https://wa.me/6283144951858" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; background-color: #25D366; padding: 0.6rem 1rem; border-radius: 8px; color: white; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: transform 0.3s;">
+            <svg width="24" height="24" fill="white" viewBox="0 0 32 32"><path d="M16.003 2.003c-7.732 0-13.996 6.265-13.996 14 0 2.469.647 4.872 1.875 6.997l-2.002 7.064 7.239-1.894c1.983 1.086 4.228 1.661 6.883 1.661 7.732 0 13.998-6.264 13.998-13.997s-6.266-14-13.997-14zm0 25.466c-2.21 0-4.309-.575-6.173-1.667l-.441-.256-4.297 1.124 1.146-4.047-.288-.461c-1.143-1.84-1.747-3.964-1.747-6.16 0-6.426 5.226-11.652 11.65-11.652s11.652 5.226 11.652 11.652c0 6.424-5.227 11.667-11.652 11.667zm6.214-8.529c-.338-.169-1.992-.983-2.3-1.094-.307-.112-.532-.169-.756.17s-.87 1.093-1.067 1.318c-.197.226-.394.254-.732.085-.338-.17-1.429-.526-2.72-1.675-1.006-.895-1.684-2.003-1.882-2.341-.196-.338-.021-.52.148-.689.152-.15.338-.394.507-.591.169-.197.226-.338.338-.564.112-.225.057-.422-.028-.591-.084-.17-.755-1.826-1.034-2.498-.27-.648-.544-.561-.756-.571l-.644-.012c-.225 0-.591.084-.901.394s-1.181 1.153-1.181 2.81 1.209 3.257 1.378 3.484c.169.225 2.383 3.639 5.776 5.101.808.347 1.437.554 1.927.708.81.257 1.547.221 2.13.134.65-.097 1.992-.812 2.275-1.596.282-.783.282-1.454.197-1.596-.084-.141-.31-.226-.647-.395z"/></svg>
+            Chat WhatsApp
+          </a>
+
+          <a href="https://instagram.com/pteuny2022" target="_blank" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); padding: 0.6rem 1rem; border-radius: 8px; color: white; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: transform 0.3s;">
+            <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.336 3.608 1.31.975.975 1.248 2.243 1.31 3.608.058 1.267.07 1.647.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.336 2.633-1.31 3.608-.975.975-2.243 1.248-3.608 1.31-1.267.058-1.647.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.336-3.608-1.31-.975-.975-1.248-2.243-1.31-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.336-2.633 1.31-3.608.975-.975 2.243-1.248 3.608-1.31C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.332.012 7.052.07 5.77.128 4.6.407 3.635 1.372c-.965.965-1.244 2.135-1.302 3.417C2.012 6.332 2 6.741 2 12s.012 5.668.07 6.948c.058 1.282.337 2.452 1.302 3.417.965.965 2.135 1.244 3.417 1.302C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.282-.058 2.452-.337 3.417-1.302.965-.965 1.244-2.135 1.302-3.417.058-1.28.07-1.689.07-6.948s-.012-5.668-.07-6.948c-.058-1.282-.337-2.452-1.302-3.417-.965-.965-2.135-1.244-3.417-1.302C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+            Follow Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Galeri PTE 22 - Pendidikan Teknik Elektronika UNY</p>
+  </footer>
+
+  <!-- Slideshow Modal -->
+  <div id="slideshowModal" class="slideshow-modal" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center;">
+    <div class="slideshow-content" style="position: relative; display: flex; align-items: center;">
+      <span class="close" onclick="closeSlideshow()" style="position: absolute; top: -50px; right: -50px; font-size: 2.5rem; color: white; cursor: pointer;">&times;</span>
+      <span class="prev" onclick="changeSlide(-1)" style="cursor: pointer; position: absolute; top: 50%; left: -60px; font-size: 3rem; color: white; user-select: none; transform: translateY(-50%);">&#10094;</span>
+      <img id="slideshowImage" src="" alt="Slideshow" style="max-width: 90vw; max-height: 80vh; border-radius: 10px;" />
+      <span class="next" onclick="changeSlide(1)" style="cursor: pointer; position: absolute; top: 50%; right: -60px; font-size: 3rem; color: white; user-select: none; transform: translateY(-50%);">&#10095;</span>
+    </div>
+  </div>
+
+  <script src="/java script/js tugas akhir.js"></script>
+</body>
+</html>
